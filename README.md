@@ -1,7 +1,7 @@
-### Brainhack 2015
+## The data science revolution in biomedical science.
 
-#### Dipy: diffusion MRI in Python
+Talk given at the PNW Prostate Cancer SPORE meeting, July 24th, 2017
 
-This short presentation introduces the DIPY library. It is built using the [reveal.js](https://github.com/hakimel/reveal.js/) library.
+It is built using the [reveal.js](https://github.com/hakimel/reveal.js/) library.
 
-2015, Copyright of Ariel Rokem, The University of Washington eScience Institute, released under the Creative Commons Attribution License:  [![Attribution](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+2017, Copyright of Ariel Rokem, The University of Washington eScience Institute, released under the Creative Commons Attribution License:  [![Attribution](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
