@@ -68,6 +68,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
+
 					<img src="images/SPORE-logo2.jpg" height="80px" alt="SPORE logo" align="middle">
 
 					<img src="images/eScience.png" height="100px" alt="eScience logo" align="middle">
@@ -82,14 +83,17 @@
 
 				</section>
 
+				<section data-background-image="./images/portage-bay.jpg" data-background-size="cover" style="background: rgba(255, 255, 255, 1.00);">
+				<blockquote>
+					<img src="images/eScience.png" width="800px">
+				        <small><em>"All across our campus, the process of discovery will increasingly rely on researchers’ ability to extract knowledge from vast amounts of data... In order to remain at the forefront, UW must be a leader in advancing these techniques and technologies, and in making [them] accessible to researchers in the broadest imaginable range of fields"</em></small>
+			  </blockquote>
+				</section>
+
 				<section>
 					<div>
-				<img src="images/eScience.png" width="800px">
 					</div>
 
-					<div class="fragment" style="text-align: left;">
-				        <small><em>"All across our campus, the process of discovery will increasingly rely on researchers’ ability to extract knowledge from vast amounts of data... In order to remain at the forefront, UW must be a leader in advancing these techniques and technologies, and in making [them] accessible to researchers in the broadest imaginable range of fields"</em></small>
-				    </div>
 
 				</section>
 
@@ -192,6 +196,9 @@
 					<video width="600" autoplay loop>
 					  <source src="./video/diffusion-isotropic.mp4">
 					</video>
+					<div style="position: absolute; left: 500px;" >
+						<small><a href="http://jov.arvojournals.org/article.aspx?articleid=2603187">Rokem et al. (2015)</a></small>
+					</div>
 
 				</section>
 
@@ -834,7 +841,7 @@
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
