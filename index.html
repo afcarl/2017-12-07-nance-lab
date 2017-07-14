@@ -513,31 +513,6 @@
 				</section>
 
 				<section>
-					<h2><a href="http://dipy.org">DIPY</a>: Diffusion MRI in Python</h2>
-					<div class="fragment">
-					Part of the <a href="http://nipy.org">NIPY</a> community
-					<div style="position: absolute; left: 720px; top:75px;">
-						<a href="http://nipy.org">
-						<img src="./images/reggie.png"  width="80"></a>
-					</div>
-					</div>
-					   <p class="fragment"> Started in 2009 by <a href="http://eleftherios.net">Eleftherios Garyfallidis</a></p>
-					   <p class="fragment"> Contributors from at least six different countries and many different labs</p>
-				</section>
-
-				<section>
-					<div style="position: absolute; left: 0px; top: 200px">
-						<a href="https://gist.github.com/arokem/3c1f1cf35806e7b6a0c93f39c9ff558a">
-					<img src="./images/dipy-growth.png" ></a>
-				</div>
-					   <div style="position: absolute; left: 700px; top: 700px">
-						<small><a href="http://journal.frontiersin.org/Journal/10.3389/fninf.2014.00008">Garyfallidis et al.(2014)</a></small>
-					</div>
-				</section>
-
-
-
-				<section>
 					<h4>Diffusion MRI: the challenge of validation</h2>
 				</section>
 
@@ -559,7 +534,7 @@
 
 				<section>
 					<h2>A statistical learning approach</h2>
-					<div class="fragment">
+					<div class="fragment" text-align:left>
 					<font size="80"><i>In-vivo validation</i></big></font>
 					</div>
 				</section>
@@ -575,7 +550,7 @@
 				<div style="position: absolute; left: 700px; top: 100px;">
 					<img src="images/sig2.png" >
 				</div>
-				<div style="position: absolute; left: 700px; top: 0px;">
+				<div style="position: absolute; left: 660px; top: 0px;">
 					<medium>Measurement #2</medium>
 				</div>
 				</div>
@@ -638,38 +613,6 @@
 						</div>
 				</section>
 
-				<section>
-				<h2>Dipy cross-validation API</h2>
-				<code data-trim>
-				<div class="fragment" align="left" style="position:absolute; left: 0px" >
-				gtab = gradient_table(...)
-				<p class="fragment" align="left">
-				model = ReconstModel(gtab, ...)
-				<p class="fragment" align="left">
-				fit = model.fit(data, ...) # => ReconstFit
-				<div class="fragment" align="left">
-				prediction = fit.predict(gtab, ...)
-				</div>
-				</code>
-				</section>
-
-				<section>
-				<h2>For example </h2>
-				<code>
-				<div align="left" style="position:absolute; left: 0px">
-				<p class="fragment" align="left">
-				model = dti.TensorModel(gtab)
-				<p class="fragment" align="left">
-				fit = model.fit(data1)
-				<p class="fragment" align="left">
-				prediction = fit.predict(gtab)
-				<p class="fragment" align="left">
-				RMSE = np.sqrt(\ <br> np.mean((prediction - data2) ** 2), -1))
-				<p class="fragment" align="left">
-				rRMSE = RMSE / np.sqrt(\ <br> np.mean((data1 - data2) ** 2), -1))
-				</code>
-				</section>
-
 
 				<section>
 					<img src="images/rRMSE-tensor.png"  height="595">
@@ -715,172 +658,140 @@
 				</div>
 				</section>
 
+
 				<section>
-					<h4>When you've only measured once</h4>
-					<p class="fragment"><a href="http://nipy.org/dipy/examples_built/kfold_xval.html#example-kfold-xval">k-fold cross-validation</a>
-				<code>
-				<div align="left" style="position:absolute; 	left: 0px">
-				<p class="fragment" align="left">
-				# Use a k of 2
-				<p class="fragment" align="left">
-				dti_pred = kfold_xval(dti_model, data, 2)
-				<p class="fragment" align="left">
-				csd_pred = kfold_xval(csd_model, data, 2)
-				</code>
+					<h4> Human Connectome Project -- data volume (GB)
+					<img src="images/data-sizes.png" width=600>
+					<h4> What computational system should we use to analyze these data? </h4>
+				</section>
+
+				<section>
+					<h4>Database support for image analytics at scale</h4>
+					<p>
+					- Parmita Mehta (CSE)
+					<p>
+					- Sven Dorkenwald (CSE)
+					<p>
+					- Dongfang Zhao (eScience/CSE)
+					<p>
+					- Tomer Kaftan (CSE)
+					<p>
+					- Alvin Cheung (eScience/CSE)
+					<p>
+					- Magda Balazinska (eScience/CSE)
+					<p>
+					- Andy Connoly (Astronomy)
+					<p>
+					- Jake Vanderplas (Astronomy)
+					<p>
+					- Yusra AlSayyad (Astronomy)
+
+					<div style="position: absolute; left: 600px; top: 600px;" > <small>
+					<a href="https://arxiv.org/abs/1612.02485">Mehta et al. (2017)</a></small>
+				</div>
+
+				</section>
+				<section>
+					<h4>Database support for image analytics at scale</h4>
+
+				<div class="fragment">
+					<p>
+
+				- Declarative languages to access data
+				<p>
+				  => Select what to process and prepare the data
+				</div>
+				<div class="fragment">
+					<p>
+
+				- Declarative languages for specifying computations
+				<p>
+				    => But can also deploy user-defined code
+				</div>
+				<div class="fragment">
+					<p>
+
+				- Physical data independence
+				<p>
+				   => Data ingestion and distribution is automatic
+
+				</div>
+				<div class="fragment">
+					<p>
+				- Infrastructure independence
+				<p>
+				    => Can be deployed in institional HPC resources
+				<p>
+				    => Can be deployed in cloud computing systems
 				</div>
 				</section>
 
 				<section>
-				<div style="position: absolute; left: 0px;">
-				<img src="images/two-algs.png"  height="600px;">
-				</div>
-				<div style="position: absolute; left: 600px; top: 150px;">
-				Algorithm 1
-				</div>
-				<div style="position: absolute; left: 600px; top: 450px;">
-				Algorithm 2
-				</div>
+					<h4>"The cloud"</h4>
+					XXX images
 				</section>
-
 				<section>
-					<h2>LiFE: Linear Fascicle Evaluation</h2>
+					<h4>The argument for cloud computing</h4>
 					<p class="fragment">
-					Forward model from the tracks to the measured signal
-				<div style="position: absolute; left: 500px; top: 650px;" >
-							<small>Pestilli et al. (2014)</small>
-				</div>
-				</section>
-
-				<section data-transition="fade-out">
-					<h4>From diffusion to tracks</h4>
-					<div style="position: absolute; left:-100px">
-					<img src="images/d2t-bkgrnd.png"  height="505", width="766">
-				</div>
-					<div style="position: absolute; left: -9px; top:58px;"><img src="images/tensor_ellipsoids.png" style="background:none; border:none; box-shadow:none; opacity:0.4; filter:alpha(opacity=40);">
-					</div>
-					<div style="position: absolute; left: -100px;">
-					<canvas id="tracks2sig" width="1000" height="1000"></canvas>
-					    <script>
-					      var canvas = document.getElementById('tracks2sig');
-					      var context = canvas.getContext('2d');
-
-					      context.beginPath();
-					      context.moveTo(590, 170);
-					      context.bezierCurveTo(400, 300, 365, 80, 378, 65);
-					      context.lineWidth = 10;
-						  context.strokeStyle = 'yellow';
-					      context.stroke();
-
-					      context.beginPath();
-						  context.moveTo(450, 455);
-					      context.bezierCurveTo(320, 300, 365, 80, 378, 65);
-					      context.lineWidth = 10;
-						  context.strokeStyle = 'red';
-					      context.stroke();
-
-					      // line color
-					    </script>
-					  </div>
-				</section>
-
-				<section data-transition="fade">
-					<h4>From tracks to diffusion</h4>
-					<div style="position: absolute; left:-100px">
-					<canvas id="tracks2sig2" width="1000" height="1000"></canvas>
-					    <script>
-					      var canvas = document.getElementById('tracks2sig2');
-					      var context = canvas.getContext('2d');
-
-					      context.beginPath();
-					      context.moveTo(590, 170);
-					      context.bezierCurveTo(400, 300, 365, 80, 378, 65);
-					      context.lineWidth = 10;
-						  context.strokeStyle = 'yellow';
-					      context.stroke();
-
-					      context.beginPath();
-						  context.moveTo(450, 455);
-					      context.bezierCurveTo(320, 300, 365, 80, 378, 65);
-					      context.lineWidth = 10;
-						  context.strokeStyle = 'red';
-					      context.stroke();
-					    </script>
-					</div>
-
-					<div class = "fragment fade-in" style="position: absolute">
-					<canvas id="arrows-life1" width="1000" height="1000">
-					</canvas>
-					    <script>
-					      context = document.getElementById('arrows-life1').getContext("2d");
-					      context.beginPath();
-						  canvas_arrow(context, 500, 170, 600, 140);
-						  context.lineWidth = 2;
-					      context.stroke();
-					    </script>
-					</div>
-					<div class="fragment fade-in" style="position: absolute; left:600px; top:200px;">
-						<img src="images/track1-sig.png"  height="300px">
-					</div>
-					<div class = "fragment fade-in" style="position: absolute">
-					<canvas id="arrows-life2" width="1000" height="1000"></canvas>
-					    <script>
-					      context = document.getElementById('arrows-life2').getContext("2d");
-					      context.beginPath();
-						  canvas_arrow(context, 280, 55, 650, 110);
-						  context.lineWidth = 2;
-					      context.stroke();
-					    </script>
-					</div>
-
-					<div class="fragment fade-in" style="position: absolute; left:650px; top:200px;">
-						<img src="images/track2-sig.png"  height="300px">
-					</div>
-
-					<div class="fragment fade-in"style="position:absolute; left:750px; top:300px;"> ... </div>
-
-					<div class="fragment fade-in"style="position:absolute; left:800px; top:300px;"> = </div>
-
-					<div class="fragment fade-in" style="position: absolute; left:850px; top:200px;">
-						<img src="images/voxel-sig.png"  height="300px">
-					</div>
-					<div style="position: absolute; left: 500px; top: 650px;" >
-					<small>Pestilli et al. (2014)</small>
-					</div>
-
+						Scalable
 				</section>
 
 				<section>
-				<div style="position:absolute; left:100px">
-					<img src="images/GLM.png" >
-				</div>
-				<div class="fragment" style="position:absolute; left:370px; top:50px;">
-					Solve for
-				</div>
-					<div class="fragment" style="position:absolute; top:45px; left:530px">
-						<img src="images/beta_larger_zero.png"  height="40px;"></div>
-						<div class="fragment" style="position:absolute; top:145px; left:200px">
-									<code>
-										>>> X.shape <br>
-										   (10e8, 10e6)
-									</code>
-						</div>
-					<div style="position: absolute; left: 500px; top: 650px;" >
-					<small>Pestilli et al. (2014)</small>
-					</div>
+					<h4></h4>
+					<img src="images/benchmark-end-to-end.png" width=600>
 				</section>
+
 				<section>
-				<code>
-				<div align="left" style="position:absolute; left: 0px; top:-100px;">
-				<p class="fragment">
-					fiber_model = life.FiberModel(gtab)
-				<p class="fragment" align="left">
-					fit = fiber_model.fit(data, tracks)
-			<p class="fragment" align="left">
-					prediction = fit.predict(gtab)
-				<p class="fragment">
-					optimized_tracks = tracks[fit.beta>0]
+					<img src="images/benchmark-scaling.png" width=600>
+				</section>
+
+				<section>
+					<h4>The argument for cloud computing</h4>
+					<p>
+						Scalable
+					<p class="fragment">
+						Elastic
+					<p class="fragment">
+						Secure, reliable
+				</section>
+
+				<section>
+					<img src="images/python-ecosystem1.png" width=600>
+				</section>
+
+				<section>
+					<img src="images/python-ecosystem2.png" width=600>
+				</section>
+
+				<section>
+					<img src="images/python-ecosystem3.png" width=600>
+				</section>
+
+				<section>
+					<img src="images/python-ecosystem4.png" width=600>
+				</section>
+
+				<section>
+					<h2><a href="http://dipy.org">DIPY</a>: Diffusion MRI in Python</h2>
+					<div class="fragment">
+					Part of the <a href="http://nipy.org">NIPY</a> community
+					<div style="position: absolute; left: 720px; top:75px;">
+						<a href="http://nipy.org">
+						<img src="./images/reggie.png"  width="80"></a>
+					</div>
+					</div>
+					   <p class="fragment"> Started in 2009 by <a href="http://eleftherios.net">Eleftherios Garyfallidis</a></p>
+					   <p class="fragment"> Contributors from at least six different countries and many different labs</p>
+				</section>
+
+				<section>
+					<div style="position: absolute; left: 0px; top: 200px">
+						<a href="https://gist.github.com/arokem/3c1f1cf35806e7b6a0c93f39c9ff558a">
+					<img src="./images/dipy-growth.png" ></a>
 				</div>
-				</code>
+					   <div style="position: absolute; left: 700px; top: 700px">
+						<small><a href="http://journal.frontiersin.org/Journal/10.3389/fninf.2014.00008">Garyfallidis et al.(2014)</a></small>
+					</div>
 				</section>
 
 				<section>
